@@ -46,13 +46,13 @@ const KeyDates = () => {
         </div>
 
       {/* Slider Container */}
-      <div className="max-w-[65%] mx-auto px-4">
+      <div className="w-full xl:w-[65%] mx-auto px-4">
         <Slider {...settings}>
           {dates.map((item, index) => (
             <div key={index} className="px-2">
               <div className="bg-white text-black p-6 rounded-2xl shadow-md text-center h-full">
                 <h3 className="text-xl font-semibold text-green-700">{item.date}</h3>
-                <p className="mt-2 text-lg sm:text-base">{item.description}</p>
+                <p className="mt-2 text-[17.2px]">{item.description}</p>
               </div>
             </div>
           ))}

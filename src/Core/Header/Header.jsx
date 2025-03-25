@@ -45,7 +45,7 @@ export default function Header() {
       className={`${isScrolled ? "bg-[#3A6A4A] shadow-md" : "bg-[#528F62]"
         } text-white py-5 flex justify-center items-center sticky top-0 z-50 transition-colors duration-300`}
     >
-      <div className="flex justify-between items-center max-w-[1300px] w-full mx-auto px-6">
+      <div className="flex justify-between items-center max-w-[1300px] w-full mx-auto px-6 text-lg lg:text-[18px]">
         {/* Logo */}
         <div className="flex items-center gap-4">
           <Link to="/">

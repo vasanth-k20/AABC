@@ -3,25 +3,25 @@ import { useNavigate } from "react-router-dom";
 
 const committeeMembers = [
   {
-    name: "Yongfu Li",
+    name: "Takaaki Kajita",
     role: "General Co-Chair",
-    university: "Shanghai JiaoTong University",
-    country: "China",
+    university: "Tokyo Institute of Technology (Tokyo Tech)",
+    country: "Japan",
+    image: "img/comm8.jpg", 
+  },
+  {
+    name: "Yoshinori Ohsumi",
+    role: "General Co-Chair",
+    university: "The University of Tokyo (UTokyo)",
+    country: "Japan",
     image: "img/comm8.jpg",
   },
   {
-    name: "Weisheng Zhao",
+    name: "Hiroshi Ishikawa ",
     role: "General Co-Chair",
-    university: "Beihang University",
-    country: "China",
-    image: "img/comm8.jpg",
-  },
-  {
-    name: "Mohd Sawan",
-    role: "General Co-Chair",
-    university: "Westlake University",
-    country: "China",
-    image: "img/comm8.jpg",
+    university: "Waseda University",
+    country: "Japan",
+    image: "img/comm8.jpg", 
   },
 ];
 
@@ -109,8 +109,8 @@ const FullCommittee = () => {
               <div>
                 <h3 className="text-lg font-semibold text-green-700">{member.name}</h3>
                 <p className="">{member.role}</p>
-                <p className="text-gray-500">{member.university}</p>
-                <p className="text-gray-500">{member.country}</p>
+                <p className="text-gray-700">{member.university}</p>
+                <p className="text-gray-700">{member.country}</p>
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ const FullCommittee = () => {
           {committeeList.map((section, index) => (
             <div key={index} className="mb-6 text-center">
               <h3 className="text-xl font-semibold text-green-700 mb-2">{section.title}</h3>
-              <ul className="text-gray-600 text-lg">
+              <ul className="text-gray-700 text-lg">
                 {section.members.map((member, idx) => (
                   <li key={idx} className="mb-1">{member}</li>
                 ))}

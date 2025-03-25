@@ -20,25 +20,24 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> About Arrow Thought
               </h3>
-              <p className="text-gray-700 text-lg text-justify">
-                The Hyatt Regency brand is a global collection of hotels and resorts found in more
-                than 200 locations across 40+ countries. A place where everyone is welcome and anything is possible.
+              <p className="text-gray-700 text-lg lg:text-[19px] text-justify">
+              ​Arrow Thought is an IT company based in California, specializing in innovative software solutions and technology consulting services. They focus on delivering customized, cutting-edge products to meet diverse client needs.
               </p>
-              <a href="#" className="text-green-500 font-semibold mt-2 inline-block">Read More</a>
+              {/* <a href="#" className="text-green-500 font-semibold mt-2 inline-block">Read More</a> */}
             </div>
 
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <MapPin className="mr-2 text-green-500" /> Location
               </h3>
-              <p className="text-gray-700 text-lg">Hyatt Regency, 88 Donghai East Road, Qingdao, China, 266061</p>
+              <p className="text-gray-700 text-lg lg:text-[19px]">Tokyo International Forum, Chiyoda City, Tokyo 266061</p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Phone className="mr-2 text-green-500" /> Call
               </h3>
-              <p className="text-gray-700 text-lg">+86 53286121234</p>
+              <p className="text-gray-700 text-lg">+6 43286121234</p>
             </div>
 
             {/* Google Map */}
@@ -58,8 +57,8 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> Visa Requirement
               </h3>
-              <p className="text-gray-700 text-lg text-justify">
-                Multiple policies help foreigners enter China. If your country is in the
+              <p className="text-gray-700 text-lg lg:text-[19px] text-justify">
+                Multiple policies help foreigners enter Japan. If your country is in the
                 <a href="#" className="text-green-500 font-semibold"> list of agreements</a> for visa exemption,
                 you don't need a visa. Otherwise, check <a href="#" className="text-green-500 font-semibold">this link</a>.
               </p>
@@ -69,8 +68,8 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> Transportation
               </h3>
-              <p className="text-gray-700 text-lg">
-                Qingdao has an efficient public transport system. Learn more via
+              <p className="text-gray-700 text-lg lg:text-[19px]">
+              Chiyoda has an efficient public transport system. Learn more via
                 <a href="#" className="text-green-500 font-semibold"> this link</a>.
               </p>
             </div>
@@ -79,7 +78,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Mail className="mr-2 text-green-500" /> Inquiry Email
               </h3>
-              <p className="text-gray-700 text-lg">isicas2025@outlook.com</p>
+              <p className="text-gray-700 text-lg lg:text-[19px]">icaabc2025@outlook.com</p>
             </div>
           </div>
         </div>

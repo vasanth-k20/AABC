@@ -50,27 +50,26 @@ export default function Contact() {
                             <h3 className="text-xl font-semibold text-green-700 flex items-center">
                                 <Globe className="mr-2 text-green-500" /> About Arrow Thought
                             </h3>
-                            <p className="text-gray-600">
-                                The Hyatt Regency brand is a global collection of hotels and resorts found in more
-                                than 200 locations across 40+ countries. A place where everyone is welcome and anything is possible.
+                            <p className="text-gray-600 text-lg lg:text-[19px] text-justify">
+                            ​Arrow Thought is an IT company based in California, specializing in innovative software solutions and technology consulting services. They focus on delivering customized, cutting-edge products to meet diverse client needs.
                             </p>
-                            <a href="#" className="text-green-500 font-semibold mt-2 inline-block">
+                            {/* <a href="#" className="text-green-500 font-semibold mt-2 inline-block">
                                 Read More
-                            </a>
+                            </a> */}
                         </div>
 
                         <div className="mb-4">
                             <h3 className="text-lg font-semibold text-green-700 flex items-center">
                                 <MapPin className="mr-2 text-green-500" /> Location
                             </h3>
-                            <p className="text-gray-600">Hyatt Regency, 88 Donghai East Road, Qingdao, China, 266061</p>
+                            <p className="text-gray-600 text-lg lg:text-[19px] text-justify">Tokyo International Forum, Chiyoda City, Tokyo 266061</p>
                         </div>
 
                         <div>
                             <h3 className="text-lg font-semibold text-green-700 flex items-center">
                                 <Phone className="mr-2 text-green-500" /> Call
                             </h3>
-                            <p className="text-gray-600">+86 53286121234</p>
+                            <p className="text-gray-600 text-lg lg:text-[19px]">+6 43286121234</p>
                         </div>
 
                         {/* Google Map */}
@@ -89,7 +88,7 @@ export default function Contact() {
                         <h3 className="text-xl font-semibold text-green-700 mb-4">Send Us a Message</h3>
                         <form onSubmit={handleSubmit}>
                             <div className="mb-4">
-                                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="firstName" className="block text-lg font-medium text-gray-700">
                                     First Name
                                 </label>
                                 <input
@@ -104,7 +103,7 @@ export default function Contact() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="lastName" className="block text-lg font-medium text-gray-700">
                                     Last Name
                                 </label>
                                 <input
@@ -119,7 +118,7 @@ export default function Contact() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="email" className="block text-lg font-medium text-gray-700">
                                     Email
                                 </label>
                                 <input
@@ -134,7 +133,7 @@ export default function Contact() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                                <label htmlFor="message" className="block text-lg font-medium text-gray-700">
                                     Message
                                 </label>
                                 <textarea

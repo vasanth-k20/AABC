@@ -21,7 +21,7 @@ const WelcomeMessage = () => {
         </h2>
 
         {/* Message Box */}
-        <div className="bg-white rounded-lg shadow-lg p-6 text-lg text-justify">
+        <div className="bg-white rounded-lg shadow-lg p-6 text-lg lg:text-[19px] text-justify">
           <p className="text-gray-700 leading-7 mb-4">
             Dear <span className="font-semibold">Colleagues and Friends</span>,
           </p>

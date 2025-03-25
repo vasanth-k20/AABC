@@ -68,7 +68,7 @@ export default function PaperSubmission() {
           <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">
             Submission Guidelines
           </h3>
-          <ul className="text-gray-700 text-lg leading-relaxed mb-6 list-disc pl-6 text-justify">
+          <ul className="text-gray-700 text-lg lg:text-[19px] leading-relaxed mb-6 list-disc pl-6 text-justify">
             <li>Authors are invited to submit <span className="font-semibold">original, unpublished research papers</span> that demonstrate innovation and contribute to the advancement of knowledge in <span className="font-semibold">AI, Business Analytics, and Cloud Systems</span>. All submissions must strictly adhere to the <span className="font-semibold">conference formatting requirements</span>.</li>
             <li>Papers should be formatted in <span className="font-semibold">double-column style</span>, using <strong>Times New Roman, 10pt font</strong>. The maximum length allowed is <span className="font-semibold">8 pages</span>, including all references and appendices.</li>
             <li>Submissions should be in <span className="font-semibold">PDF or DOCX format</span> and should not contain any author-identifying information to maintain <span className="font-semibold">double-blind peer review</span> integrity. The review process will evaluate papers based on their <span className="font-semibold">originality, technical quality, relevance, and clarity of presentation</span>.</li>
@@ -81,7 +81,7 @@ export default function PaperSubmission() {
           <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">
             Important Notes
           </h3>
-          <ul className="text-gray-700 text-lg leading-relaxed mb-6 list-disc pl-6 text-justify">
+          <ul className="text-gray-700 text-lg lg:text-[19px] leading-relaxed mb-6 list-disc pl-6 text-justify">
             <li><strong>Submission Deadline:</strong> All papers must be submitted by <span className="font-semibold">December 1, 2025</span>. Late submissions will <span className="font-semibold">not</span> be accepted under any circumstances.</li>
             <li><strong>Plagiarism Policy:</strong> All submissions will be <span className="font-semibold">checked for plagiarism</span> using approved tools. Papers containing more than <span className="font-semibold">20% similarity</span> with existing work will be <span className="font-semibold">automatically rejected</span>.</li>
             <li><strong>Author Registration:</strong> At least one author must register for the conference by <span className="font-semibold">December 15, 2025</span>, to be included in the final program and proceedings.</li>

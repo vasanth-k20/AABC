@@ -66,14 +66,14 @@ export default function RegistrationDetails() {
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">Registration Fees</h3>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <table className="w-full text-left">
-              <thead>
+              <thead className="text-md lg:text-lg">
                 <tr className="border-b">
                   <th className="py-2">Category</th>
                   <th className="py-2">Early Bird (Before Dec 1, 2025)</th>
                   <th className="py-2">Regular (After Dec 1, 2025)</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-lg lg:text-[19px]">
                 <tr className="border-b">
                   <td className="py-2">Students</td>
                   <td className="py-2">$100</td>
@@ -98,7 +98,7 @@ export default function RegistrationDetails() {
         <div className="mb-12">
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">Payment Methods</h3>
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <ul className="list-disc pl-6 text-gray-700">
+            <ul className="list-disc pl-6 text-gray-700 text-lg lg:text-[19px]">
               <li>Credit Card (Visa, MasterCard, American Express)</li>
               <li>Bank Transfer (Details provided upon registration)</li>
               <li>PayPal (Available for international participants)</li>

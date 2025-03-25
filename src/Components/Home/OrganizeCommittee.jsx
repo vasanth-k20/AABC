@@ -3,25 +3,25 @@ import { useNavigate } from "react-router-dom";
 
 const committeeMembers = [
   {
-    name: "Yongfu Li",
+    name: "Takaaki Kajita",
     role: "General Co-Chair",
-    university: "Shanghai Jiao Tong University",
-    country: "China",
-    image: "img/comm8.jpg", // Replace with the correct image path
+    university: "Tokyo Institute of Technology (Tokyo Tech)",
+    country: "Japan",
+    image: "img/comm8.jpg", 
   },
   {
-    name: "Weisheng Zhao",
+    name: "Yoshinori Ohsumi",
     role: "General Co-Chair",
-    university: "Beihang University",
-    country: "China",
-    image: "img/comm8.jpg", // Replace with the correct image path
+    university: "The University of Tokyo (UTokyo)",
+    country: "Japan",
+    image: "img/comm8.jpg", 
   },
   {
-    name: "Mohd Sawan",
+    name: "Hiroshi Ishikawa ",
     role: "General Co-Chair",
-    university: "Westlake University",
-    country: "China",
-    image: "img/comm8.jpg", // Replace with the correct image path
+    university: "Waseda University",
+    country: "Japan",
+    image: "img/comm8.jpg", 
   },
 ];
 
@@ -54,8 +54,8 @@ const OrganizingCommittee = () => {
                   {member.name}
                 </h3>
                 <p className="">{member.role}</p>
-                <p className="text-gray-500">{member.university}</p>
-                <p className="text-gray-500">{member.country}</p>
+                <p className="text-gray-700">{member.university}</p>
+                <p className="text-gray-700">{member.country}</p>
               </div>
             </div>
           ))}

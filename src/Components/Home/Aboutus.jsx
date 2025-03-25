@@ -13,7 +13,7 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* About Content */}
                     <div>
-                        <p className=" text-lg mb-4 text-justify">
+                        <p className=" text-lg lg:text-[19px] mb-4 text-justify">
                         The International Conference on Advances in AI, Business Analytics, and Cloud Systems (AABC) is a premier global event 
                         uniting researchers, industry experts, and academics to explore innovations in AI, Business Analytics, and Cloud Systems. 
                         Featuring keynote speeches, technical sessions, workshops, and industry panels, AABC addresses cutting-edge topics like 
