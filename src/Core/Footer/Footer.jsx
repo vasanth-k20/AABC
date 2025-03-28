@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="py-7 border-t border-green-700">
           <div className="flex items-center justify-center">
             <span className="text-white">
-              © <a href="https://www.arrowthought.com/" className="hover:text-green-300">Arrow Thought</a> 2025, All rights reserved.
+              © <a href="#" className="hover:text-green-300">AABC</a> 2025, All rights reserved.
             </span>
           </div>
         </div>

@@ -12,38 +12,30 @@ export default function Header() {
     setDropdownOpen(dropdownOpen === menu ? null : menu);
   };
 
-  // Handle hover with a delay for closing the dropdown
   const handleMouseEnter = (menu) => {
     if (hoverTimeout) clearTimeout(hoverTimeout);
     setDropdownOpen(menu);
   };
 
   const handleMouseLeave = () => {
-    // Add a delay before closing the dropdown
     const timeout = setTimeout(() => {
       setDropdownOpen(null);
-    }, 200); // 200ms delay
+    }, 200);
     setHoverTimeout(timeout);
   };
 
-  // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
-      className={`${isScrolled ? "bg-[#3A6A4A] shadow-md" : "bg-[#528F62]"
-        } text-white py-5 flex justify-center items-center sticky top-0 z-50 transition-colors duration-300`}
+      className={`${isScrolled ? "bg-[#3A6A4A] shadow-md" : "bg-[#528F62]"} 
+        text-white py-5 flex justify-center items-center sticky top-0 z-50 transition-colors duration-300`}
     >
       <div className="flex justify-between items-center max-w-[1300px] w-full mx-auto px-6 text-lg lg:text-[18px]">
         {/* Logo */}
@@ -53,7 +45,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Button (Only visible on md and below) */}
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -63,12 +55,8 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:space-x-8">
-
           {/* Home */}
-          <Link
-            to="/"
-            className="hover:text-gray-300 transition text-lg"
-          >
+          <Link to="/" className="hover:text-gray-300 transition text-lg">
             Home
           </Link>
 
@@ -87,14 +75,18 @@ export default function Header() {
             {dropdownOpen === "About" && (
               <ul
                 className="absolute left-0 mt-2 bg-white text-black shadow-md rounded-md py-2 w-64 z-50"
-                onMouseEnter={() => handleMouseEnter("About")} // Keep dropdown open when hovering over it
+                onMouseEnter={() => handleMouseEnter("About")}
                 onMouseLeave={handleMouseLeave}
               >
-                <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/welcome-message">Welcome Message</Link>
+                <li className="hover:bg-gray-200">
+                  <Link to="/welcome-message" className="block px-4 py-2 w-full">
+                    Welcome Message
+                  </Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/full-committee">Organizing Committee</Link>
+                <li className="hover:bg-gray-200">
+                  <Link to="/full-committee" className="block px-4 py-2 w-full">
+                    Organizing Committee
+                  </Link>
                 </li>
               </ul>
             )}
@@ -118,21 +110,22 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter("Authors")}
                 onMouseLeave={handleMouseLeave}
               >
-                <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/registration">Registration Details</Link>
+                <li className="hover:bg-gray-200">
+                  <Link to="/registration" className="block px-4 py-2 w-full">
+                    Registration Details
+                  </Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-200">
-                  <Link to="/paper-submit">Paper Submission</Link>
+                <li className="hover:bg-gray-200">
+                  <Link to="/paper-submit" className="block px-4 py-2 w-full">
+                    Paper Submission
+                  </Link>
                 </li>
               </ul>
             )}
           </div>
 
           {/* Contact */}
-          <Link
-            to="/contact"
-            className="hover:text-gray-300 transition text-lg"
-          >
+          <Link to="/contact" className="hover:text-gray-300 transition text-lg">
             Contact
           </Link>
 
@@ -147,10 +140,10 @@ export default function Header() {
 
         {/* Mobile Sliding Menu */}
         <div
-          className={`fixed top-0 right-0 h-[50%] w-64 bg-green-800 text-white flex flex-col items-center justify-center transition-transform transform ${menuOpen ? "translate-x-0" : "translate-x-full"
-            } md:hidden`}
+          className={`fixed top-0 right-0 h-[50%] w-64 bg-green-800 text-white flex flex-col items-center justify-center transition-transform transform ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          } md:hidden`}
         >
-          {/* Close Button */}
           <button
             className="absolute top-5 right-5 text-white"
             onClick={() => setMenuOpen(false)}
@@ -159,8 +152,6 @@ export default function Header() {
           </button>
 
           <ul className="flex flex-col space-y-6 text-lg">
-
-            {/* Home */}
             <Link
               to="/"
               className="hover:text-gray-300 transition text-lg"
@@ -179,23 +170,25 @@ export default function Header() {
               </button>
               {dropdownOpen === "About" && (
                 <ul className="absolute left-[-50%] mt-2 bg-white text-black shadow-md rounded-md py-2 w-64 z-50">
-                  <li className="px-4 py-2 hover:bg-gray-200">
+                  <li className="hover:bg-gray-200">
                     <Link
                       to="/welcome-message"
+                      className="block px-4 py-2 w-full"
                       onClick={() => {
-                        setDropdownOpen(null); // Close dropdown
-                        setMenuOpen(false); // Close mobile menu
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
                       }}
                     >
                       Welcome Message
                     </Link>
                   </li>
-                  <li className="px-4 py-2 hover:bg-gray-200">
+                  <li className="hover:bg-gray-200">
                     <Link
                       to="/full-committee"
+                      className="block px-4 py-2 w-full"
                       onClick={() => {
-                        setDropdownOpen(null); // Close dropdown
-                        setMenuOpen(false); // Close mobile menu
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
                       }}
                     >
                       Organizing Committee
@@ -215,23 +208,25 @@ export default function Header() {
               </button>
               {dropdownOpen === "Authors" && (
                 <ul className="absolute left-[-50%] mt-2 bg-white text-black shadow-md rounded-md py-2 w-64 z-50">
-                  <li className="px-4 py-2 hover:bg-gray-200">
+                  <li className="hover:bg-gray-200">
                     <Link
                       to="/registration"
+                      className="block px-4 py-2 w-full"
                       onClick={() => {
-                        setDropdownOpen(null); // Close dropdown
-                        setMenuOpen(false); // Close mobile menu
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
                       }}
                     >
                       Registration Details
                     </Link>
                   </li>
-                  <li className="px-4 py-2 hover:bg-gray-200">
+                  <li className="hover:bg-gray-200">
                     <Link
                       to="/paper-submit"
+                      className="block px-4 py-2 w-full"
                       onClick={() => {
-                        setDropdownOpen(null); // Close dropdown
-                        setMenuOpen(false); // Close mobile menu
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
                       }}
                     >
                       Paper Submission
@@ -241,7 +236,6 @@ export default function Header() {
               )}
             </li>
 
-            {/* Contact Dropdown (Mobile) */}
             <Link
               to="/contact"
               className="hover:text-gray-300 transition text-lg"
@@ -251,7 +245,6 @@ export default function Header() {
             </Link>
           </ul>
 
-          {/* Registration Button (Mobile) */}
           <Link
             to="/paper-submit"
             className="mt-6 border border-white px-6 py-2 rounded-full hover:bg-green-300 transition"

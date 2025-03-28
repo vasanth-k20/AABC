@@ -100,9 +100,12 @@ const FullCommittee = () => {
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 flex items-center transition-transform transform hover:scale-105">
               <img src={member.image} alt={member.name} className="w-30 h-30 rounded-full object-cover mr-4" />
               <div>
-                <h3 className="text-lg font-semibold text-green-700">{member.name}</h3>
-                <p className="">{member.role}</p>
-                <p className="text-gray-700">{member.university}</p>
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
+                  {member.name}
+                </h3>
+                <p className="mb-1">{member.role}</p>
+                <div className="border-t-2 border-green-700 w-13 mb-4"></div>
+                <p className="text-green-700 mb-2">{member.university}</p>
                 <p className="text-gray-700">{member.country}</p>
               </div>
             </div>

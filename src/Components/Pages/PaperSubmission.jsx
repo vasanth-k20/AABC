@@ -1,230 +1,321 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useState } from "react";
 
 export default function PaperSubmission() {
-  const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    paperTitle: "",
-    authorName: "",
-    authorEmail: "",
-    authorInstitution: "",
-    authorCategory: "",
-    paperFile: null,
-  });
-  const [errors, setErrors] = useState({});
-
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files ? files[0] : value,
+    const [formData, setFormData] = useState({
+        Papertitle: '',
+        AuthorFullName: '',
+        AuthorEmail: '',
+        AuthorInstitution: '',
+        AuthorCategory: '',
+        AuthorAbstract: '',
+        PaperFile: null,
     });
-  };
 
-  // Validate form fields
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.paperTitle) newErrors.paperTitle = "Paper title is required.";
-    if (!formData.authorName) newErrors.authorName = "Author name is required.";
-    if (!formData.authorEmail) {
-      newErrors.authorEmail = "Author email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.authorEmail)) {
-      newErrors.authorEmail = "Invalid email format.";
-    }
-    if (!formData.authorInstitution) newErrors.authorInstitution = "Institution is required.";
-    if (!formData.authorCategory) newErrors.authorCategory = "Category is required.";
-    if (!formData.paperFile) newErrors.paperFile = "Paper file is required.";
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+    const [errors, setErrors] = useState({});
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState('');
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      console.log("Form submitted:", formData);
-      setIsModalOpen(false); // Close modal after submission
-    }
-  };
+    const handleChange = (e) => {
+        const { name, value, files } = e.target;
+        if (name === 'PaperFile') {
+            setFormData({ ...formData, PaperFile: files[0] });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
+    };
 
-  return (
-    <section className="bg-gray-100 px-6 py-10">
-      <div className="max-w-6xl mx-auto">
-   
-        {/* Title */}
-        <h2 className="text-3xl font-bold text-green-700 mb-6">Paper Submission</h2>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        let newErrors = {};
+    
+        if (!formData.Papertitle.trim()) newErrors.Papertitle = "Paper Title is required";
+        if (!formData.AuthorFullName.trim()) newErrors.AuthorFullName = "Author Full Name is required";
+        if (!formData.AuthorEmail.trim()) newErrors.AuthorEmail = "Author Email Address is required";
+        if (!formData.AuthorInstitution.trim()) newErrors.AuthorInstitution = "Author Institution Name is required";
+        if (!formData.AuthorCategory.trim()) newErrors.AuthorCategory = "Author Category is required";
+        if (!formData.AuthorAbstract.trim()) newErrors.AuthorAbstract = "Author Abstract is required";
+        if (!formData.PaperFile) newErrors.PaperFile = "Paper File is required";
+    
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+    
+        setErrors({});
+    
+        const formDataToSend = new FormData();
+        formDataToSend.append('title', formData.Papertitle);
+        formDataToSend.append('fullName', formData.AuthorFullName);
+        formDataToSend.append('email', formData.AuthorEmail);
+        formDataToSend.append('institution', formData.AuthorInstitution);
+        formDataToSend.append('category', formData.AuthorCategory);
+        formDataToSend.append('abstract', formData.AuthorAbstract);
+        formDataToSend.append('file', formData.PaperFile);
+    
+        try {
+            const response = await fetch('http://localhost:5000/api/submit-paper', {
+                method: 'POST',
+                body: formDataToSend,
+            });
+    
+            // Check if the response is JSON
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                const result = await response.json();
+    
+                if (response.ok) {
+                    setMessage(result.message || "Paper submitted successfully!");
+                    setMessageType('alert-success');
+                    setFormData({
+                        Papertitle: '',
+                        AuthorFullName: '',
+                        AuthorEmail: '',
+                        AuthorInstitution: '',
+                        AuthorCategory: '',
+                        AuthorAbstract: '',
+                        PaperFile: null,
+                    });
+                } else {
+                    setMessage(result.error || "Paper submission failed.");
+                    setMessageType('alert-danger');
+                }
+            } else {
+                // Handle non-JSON responses
+                const textResponse = await response.text();
+                setMessage(textResponse || "Paper submission failed.");
+                setMessageType('alert-danger');
+            }
+        } catch (error) {
+            console.error('Error submitting paper:', error);
+            setMessage('An error occurred while submitting your paper.');
+            setMessageType('alert-danger');
+        }
+    };
 
-        <div>
-          {/* Submission Guidelines */}
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">
-            Submission Guidelines
-          </h3>
-          <ul className="text-gray-700 text-lg lg:text-[19px] leading-relaxed mb-6 list-disc pl-6 text-justify">
-            <li>Authors are invited to submit <span className="font-semibold">original, unpublished research papers</span> that demonstrate innovation and contribute to the advancement of knowledge in <span className="font-semibold">AI, Business Analytics, and Cloud Systems</span>. All submissions must strictly adhere to the <span className="font-semibold">conference formatting requirements</span>.</li>
-            <li>Papers should be formatted in <span className="font-semibold">double-column style</span>, using <strong>Times New Roman, 10pt font</strong>. The maximum length allowed is <span className="font-semibold">8 pages</span>, including all references and appendices.</li>
-            <li>Submissions should be in <span className="font-semibold">PDF or DOCX format</span> and should not contain any author-identifying information to maintain <span className="font-semibold">double-blind peer review</span> integrity. The review process will evaluate papers based on their <span className="font-semibold">originality, technical quality, relevance, and clarity of presentation</span>.</li>
-            <li>Accepted papers will be presented at the conference and published in <span className="font-semibold">recognized digital libraries</span>. Authors must register for the conference to present their work. Failure to present the paper may result in removal from the conference proceedings.</li>
-          </ul>
-        </div>
 
-        <div>
-          {/* Important Notes */}
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4 mt-8">
-            Important Notes
-          </h3>
-          <ul className="text-gray-700 text-lg lg:text-[19px] leading-relaxed mb-6 list-disc pl-6 text-justify">
-            <li><strong>Submission Deadline:</strong> All papers must be submitted by <span className="font-semibold">December 1, 2025</span>. Late submissions will <span className="font-semibold">not</span> be accepted under any circumstances.</li>
-            <li><strong>Plagiarism Policy:</strong> All submissions will be <span className="font-semibold">checked for plagiarism</span> using approved tools. Papers containing more than <span className="font-semibold">20% similarity</span> with existing work will be <span className="font-semibold">automatically rejected</span>.</li>
-            <li><strong>Author Registration:</strong> At least one author must register for the conference by <span className="font-semibold">December 15, 2025</span>, to be included in the final program and proceedings.</li>
-            <li><strong>Presentation Mode:</strong> Accepted papers must be presented in <span className="font-semibold">person or virtually</span>. Authors unable to attend must notify the organizers in advance to arrange an alternative presentation.</li>
-          </ul>
-        </div>
 
-        {/* Submit Paper Button */}
-        <div className="text-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-4 py-2 bg-green-700 text-white rounded-sm hover:bg-green-600 text-lg transition-transform transform hover:scale-105"
-          >
-            Submit Your Paper
-          </button>
-        </div>
-      </div>
+    return (
+        <section>
+             <div className="pt-10 px-06 md:px-20 w-full xl:w-[70%] mx-auto">
+                {/* Title */}
+             <h2 className="text-3xl font-bold text-green-700 mb-6">Paper Submission</h2>
+             </div>
+            {/* Main Content Section */}
+            <div className="w-full xl:w-[65%] px-4 mb-10 flex flex-col lg:flex-row gap-8 items-center justify-center mx-auto ">
+                {/* Submission Form (Left Side) */}
+                <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-2xl p-8 border-t-4 border-b-4 border-green-500">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submit Your Paper</h2>
+                    <form className="space-y-6" onSubmit={handleSubmit}>
+                        {/* Paper Title */}
+                        <div>
+                            <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                                Paper Title
+                            </label>
+                            <input
+                                type="text"
+                                id="Papertitle"
+                                name="Papertitle"
+                                value={formData.Papertitle}
+                                onChange={handleChange}
+                                placeholder="Enter the title of your paper"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.Papertitle && <div className="text-red-500 text-sm mt-1">{errors.Papertitle}</div>}
+                        </div>
 
-      {/* Modal Form */}
-      {isModalOpen && (
-  <div className="fixed inset-0 backdrop-blur-sm flex justify-center items-start p-4 pt-16">
-    <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-lg relative overflow-y-auto max-h-[80vh] mt-16">
-      <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
-        Submit Your Paper
-      </h2>
-      <form className="space-y-5" onSubmit={handleSubmit}>
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Paper Title *
-          </label>
-          <input
-            type="text"
-            name="paperTitle"
-            value={formData.paperTitle}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          />
-          {errors.paperTitle && (
-            <p className="text-red-600 text-sm mt-1">{errors.paperTitle}</p>
-          )}
-        </div>
+                        {/* Author(s) */}
+                        <div>
+                            <label htmlFor="authors" className="block text-sm font-medium text-gray-700">
+                                Author(s)
+                            </label>
+                            <input
+                                type="text"
+                                id="AuthorFullName"
+                                name="AuthorFullName"
+                                value={formData.AuthorFullName}
+                                onChange={handleChange}
+                                placeholder="Enter the name of the author's"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.AuthorFullName && <div className="text-red-500 text-sm mt-1">{errors.AuthorFullName}</div>}
+                        </div>
 
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Author Full Name *
-          </label>
-          <input
-            type="text"
-            name="authorName"
-            value={formData.authorName}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          />
-          {errors.authorName && (
-            <p className="text-red-600 text-sm mt-1">{errors.authorName}</p>
-          )}
-        </div>
+                        {/* Author's Email */}
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                                Author's Email
+                            </label>
+                            <input
+                                type="email"
+                                id="AuthorEmail"
+                                name="AuthorEmail"
+                                value={formData.AuthorEmail}
+                                onChange={handleChange}
+                                placeholder="Enter the author's email"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.AuthorEmail && <div className="text-red-500 text-sm mt-1">{errors.AuthorEmail}</div>}
+                        </div>
 
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Author Email *
-          </label>
-          <input
-            type="email"
-            name="authorEmail"
-            value={formData.authorEmail}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          />
-          {errors.authorEmail && (
-            <p className="text-red-600 text-sm mt-1">{errors.authorEmail}</p>
-          )}
-        </div>
+                        {/* Author's Institution */}
+                        <div>
+                            <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
+                                Author's Institution
+                            </label>
+                            <input
+                                type="text"
+                                id="AuthorInstitution"
+                                name="AuthorInstitution"
+                                value={formData.AuthorInstitution}
+                                onChange={handleChange}
+                                placeholder="Enter the author's institution"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.AuthorInstitution && <div className="text-red-500 text-sm mt-1">{errors.AuthorInstitution}</div>}
+                        </div>
 
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Author Institution *
-          </label>
-          <input
-            type="text"
-            name="authorInstitution"
-            value={formData.authorInstitution}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          />
-          {errors.authorInstitution && (
-            <p className="text-red-600 text-sm mt-1">{errors.authorInstitution}</p>
-          )}
-        </div>
+                        {/* Author's Category */}
+                        <div>
+                            <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+                                Author's Category
+                            </label>
+                            <select
+                                id="AuthorCategory"
+                                name="AuthorCategory"
+                                value={formData.AuthorCategory}
+                                onChange={handleChange}
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            >
+                                <option value="">Select Category</option>
+                                <option value="student">Student</option>
+                                <option value="researcher">Researcher</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="industry">Industry Professional</option>
+                            </select>
+                            {errors.AuthorCategory && <div className="text-red-500 text-sm mt-1">{errors.AuthorCategory}</div>}
+                        </div>
 
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Author Category *
-          </label>
-          <select
-            name="authorCategory"
-            value={formData.authorCategory}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          >
-            <option value="">-- Select Category --</option>
-            <option value="Student">Student</option>
-            <option value="Faculty">Faculty</option>
-            <option value="Industry">Industry</option>
-          </select>
-          {errors.authorCategory && (
-            <p className="text-red-600 text-sm mt-1">{errors.authorCategory}</p>
-          )}
-        </div>
+                        {/* Abstract */}
+                        <div>
+                            <label htmlFor="abstract" className="block text-sm font-medium text-gray-700">
+                                Abstract
+                            </label>
+                            <textarea
+                                id="AuthorAbstract"
+                                name="AuthorAbstract"
+                                value={formData.AuthorAbstract}
+                                onChange={handleChange}
+                                rows="4"
+                                placeholder="Provide a brief summary of your paper"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.AuthorAbstract && <div className="text-red-500 text-sm mt-1">{errors.AuthorAbstract}</div>}
+                        </div>
 
-        <div>
-          <label className="block text-gray-700 font-semibold">
-            Upload Paper (PDF/DOC) *
-          </label>
-          <input
-            type="file"
-            name="paperFile"
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3"
-            required
-          />
-          {errors.paperFile && (
-            <p className="text-red-600 text-sm mt-1">{errors.paperFile}</p>
-          )}
-        </div>
+                        {/* File Upload */}
+                        <div>
+                            <label htmlFor="file" className="block text-sm font-medium text-gray-700">
+                                Upload Paper (PDF only)
+                            </label>
+                            <input
+                                type="file"
+                                id="PaperFile"
+                                name="PaperFile"
+                                accept=".pdf"
+                                onChange={handleChange}
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-green-600 focus:border-green-600 focus:outline-none"
+                                required
+                            />
+                            {errors.PaperFile && <div className="text-red-500 text-sm mt-1">{errors.PaperFile}</div>}
+                        </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3 mt-6">
-          <button
-            type="submit"
-            className="w-full md:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition"
-          >
-            Submit Paper
-          </button>
-          <button
-            type="button"
-            onClick={() => setIsModalOpen(false)}
-            className="w-full md:w-auto text-red-600 font-semibold px-8 py-3 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white transition"
-          >
-            Close
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-)}
-    </section>
-  );
+                        {/* Submit Button */}
+                        <div className="form-button">
+                            <button
+                                type="submit"
+                                className="w-full px-4 py-2 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-600"
+                            >
+                                Submit Paper
+                            </button>
+                        </div>
+                        {/* Alert for Messages */}
+                        {message && (
+                            <div className="mt-4 mx-auto w-full max-w-2xl px-4">
+                                <div className={`p-4 rounded-lg ${messageType === 'alert-success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                                    {message}
+                                </div>
+                            </div>
+                        )}
+                    </form>
+                </div>
+
+                {/* Submission Guidelines (Right Side) */}
+                <div className="w-full lg:w-1/2 bg-gray-100 shadow-lg rounded-2xl p-8">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submission Guidelines</h2>
+                    <ul className="space-y-3 text-gray-700">
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Papers must be written in English.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Maximum length: 8 pages including figures and references.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Use the conference format.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Submit in PDF, Docx, PPTX format.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Include abstract (max 250 words).
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-green-500 mr-2"><i className="fa-solid fa-circle-check"></i></span>
+                            Blind all author information for review.
+                        </li>
+                    </ul>
+
+                    <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Important Notes</h2>
+                    <ul className="space-y-3 text-gray-700">
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            All papers undergo a double-blind peer review process.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            At least one author must register for the conference.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            Plagiarism checks will be performed.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            Multiple submissions are not allowed.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            Authors must present accepted papers at the conference.
+                        </li>
+                        <li className="flex items-center">
+                            <span className="text-blue-500 mr-2"><i className="fa-solid fa-circle-info"></i></span>
+                            Papers will be published in the conference proceedings.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    );
 }

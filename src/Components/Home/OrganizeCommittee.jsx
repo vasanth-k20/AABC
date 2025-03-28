@@ -50,11 +50,12 @@ const OrganizingCommittee = () => {
                 className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 rounded-full object-cover mb-4 sm:mb-0 sm:mr-4"
               />
               <div>
-                <h3 className="text-xl font-semibold text-green-700">
+                <h3 className="text-xl font-semibold text-green-700 mb-2">
                   {member.name}
                 </h3>
-                <p className="">{member.role}</p>
-                <p className="text-gray-700">{member.university}</p>
+                <p className="mb-1">{member.role}</p>
+                <div className="border-t-2 border-green-700 w-13 mb-4"></div>
+                <p className="text-green-700 mb-2">{member.university}</p>
                 <p className="text-gray-700">{member.country}</p>
               </div>
             </div>
