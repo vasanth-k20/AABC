@@ -18,15 +18,14 @@ export default function Contact() {
           <div className="border-t-4 border-b-4 border-green-500 p-6 shadow-md rounded-md bg-white">
             <div className="mb-4">
               <h3 className="text-xl font-semibold text-green-700 flex items-center">
-                <Globe className="mr-2 text-green-500" /> About Arrow Thought
+                <Globe className="mr-2 text-green-500" /> About International Forum
               </h3>
-              <p className="text-gray-700 text-lg lg:text-[19px] text-justify">
-              ​Arrow Thought is an IT company based in California, specializing in innovative software solutions and technology consulting services. They focus on delivering customized, cutting-edge products to meet diverse client needs.
+              <p className="text-gray-700 text-lg lg:text-[19px] text-justify mb-6">
+              The Tokyo International Forum is a modern conference and event center in Chiyoda City, Tokyo. It features a stunning glass atrium and sleek steel framework. It is open for exhibitions, concerts, and business events.
               </p>
-              {/* <a href="#" className="text-green-500 font-semibold mt-2 inline-block">Read More</a> */}
             </div>
 
-            <div className="mb-4">
+            <div className="mb-6">
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <MapPin className="mr-2 text-green-500" /> Location
               </h3>
@@ -57,14 +56,14 @@ export default function Contact() {
               <h3 className="text-xl font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> Visa Requirement
               </h3>
-              <p className="text-gray-700 text-lg lg:text-[19px] text-justify">
+              <p className="text-gray-700 text-lg lg:text-[19px] text-justify mb-6">
                 Multiple policies help foreigners enter Japan. If your country is in the
                 <a href="#" className="text-green-500 font-semibold"> list of agreements</a> for visa exemption,
                 you don't need a visa. Otherwise, check <a href="#" className="text-green-500 font-semibold">this link</a>.
               </p>
             </div>
 
-            <div className="mb-4">
+            <div className="mb-6">
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> Transportation
               </h3>

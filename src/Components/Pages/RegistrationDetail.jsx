@@ -50,14 +50,7 @@ export default function RegistrationDetails() {
   return (
     <section className="bg-gray-100 px-6 py-10">
       <div className="max-w-6xl mx-auto">
-        {/* Breadcrumb Navigation */}
-        <nav className="text-green-600 mb-4">
-          <span className="cursor-pointer hover:underline" onClick={() => navigate("/")}>
-            Home
-          </span>{" "}
-          / <span className="text-gray-700">Registration Details</span>
-        </nav>
-
+   
         {/* Title */}
         <h2 className="text-3xl font-bold text-green-700 mb-6">Registration Details</h2>
 
@@ -95,7 +88,7 @@ export default function RegistrationDetails() {
         </div>
 
         {/* Payment Methods Section */}
-        <div className="mb-12">
+        <div>
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">Payment Methods</h3>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <ul className="list-disc pl-6 text-gray-700 text-lg lg:text-[19px]">

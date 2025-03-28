@@ -10,7 +10,7 @@ export default function HeroSection() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-white font-bold py-5 text-[clamp(2rem,4vw,3rem)]">
+            <h1 className="text-white font-bold py-5 text-[clamp(2rem,4vw,2.8rem)] leading-tight">
             International Conference on Advances in AI, Business Analytics, and Cloud Systems (AABC) 2025
             </h1>
             <p className="text-white text-[clamp(1rem,2vw,1.25rem)] pb-5 leading-relaxed">

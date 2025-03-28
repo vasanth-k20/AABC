@@ -90,13 +90,6 @@ const FullCommittee = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-10">
       <div className="w-full xl:w-[65%] mx-auto px-4">
-        {/* Breadcrumb Navigation */}
-        <nav className="text-green-600 mb-4">
-          <span className="cursor-pointer hover:underline" onClick={() => navigate("/")}>
-            Home
-          </span>{" "}
-          / <span className="text-gray-700">Organizing Committee</span>
-        </nav>
 
         {/* Title */}
         <h2 className="text-3xl font-bold text-green-700 mb-6">Organizing Committee</h2>
@@ -128,16 +121,6 @@ const FullCommittee = () => {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Back Button */}
-        <div className="text-center mt-8">
-          <button
-            onClick={() => navigate(-1)}
-            className="px-4 py-2 bg-green-700 text-white rounded-sm hover:bg-green-600 text-lg transition-transform transform hover:scale-105"
-          >
-            Back to Home
-          </button>
         </div>
       </div>
     </div>

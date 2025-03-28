@@ -31,14 +31,6 @@ export default function Contact() {
     return (
         <section className="bg-gray-100" id="contact">
             <div className="py-10 px-6 md:px-20 w-full xl:w-[70%] mx-auto">
-                {/* Breadcrumb Navigation */}
-                <nav className="text-green-600 mb-4">
-                    <span className="cursor-pointer hover:underline" onClick={() => navigate("/")}>
-                        Home
-                    </span>{" "}
-                    / <span className="text-gray-700">Feel Free to Contact Us</span>
-                </nav>
-
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-green-700 mb-6">Contact</h2>
 
@@ -46,19 +38,16 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-8 mt-8">
                     {/* Left Section */}
                     <div className="border-t-4 border-b-4 border-green-500 p-6 shadow-md rounded-md bg-white">
-                        <div className="mb-4">
+                        <div className="mb-6">
                             <h3 className="text-xl font-semibold text-green-700 flex items-center">
                                 <Globe className="mr-2 text-green-500" /> About Arrow Thought
                             </h3>
                             <p className="text-gray-600 text-lg lg:text-[19px] text-justify">
                             ​Arrow Thought is an IT company based in California, specializing in innovative software solutions and technology consulting services. They focus on delivering customized, cutting-edge products to meet diverse client needs.
                             </p>
-                            {/* <a href="#" className="text-green-500 font-semibold mt-2 inline-block">
-                                Read More
-                            </a> */}
                         </div>
 
-                        <div className="mb-4">
+                        <div className="mb-6">
                             <h3 className="text-lg font-semibold text-green-700 flex items-center">
                                 <MapPin className="mr-2 text-green-500" /> Location
                             </h3>

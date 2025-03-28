@@ -52,14 +52,7 @@ export default function PaperSubmission() {
   return (
     <section className="bg-gray-100 px-6 py-10">
       <div className="max-w-6xl mx-auto">
-        {/* Breadcrumb Navigation */}
-        <nav className="text-green-600 mb-4">
-          <span className="cursor-pointer hover:underline" onClick={() => navigate("/")}>
-            Home
-          </span>{" "}
-          / <span className="text-gray-700">Submit Your Paper Here</span>
-        </nav>
-
+   
         {/* Title */}
         <h2 className="text-3xl font-bold text-green-700 mb-6">Paper Submission</h2>
 
