@@ -97,7 +97,7 @@ export default function PaperSubmission() {
 
 
     return (
-        <section>
+        <section className="bg-gray-100">
              <div className="pt-10 px-06 md:px-20 w-full xl:w-[70%] mx-auto">
                 {/* Title */}
              <h2 className="text-3xl font-bold text-green-700 mb-6">Paper Submission</h2>
