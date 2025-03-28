@@ -27,9 +27,9 @@ export default function PaperSubmission() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         let newErrors = {};
-    
+
         if (!formData.Papertitle.trim()) newErrors.Papertitle = "Paper Title is required";
         if (!formData.AuthorFullName.trim()) newErrors.AuthorFullName = "Author Full Name is required";
         if (!formData.AuthorEmail.trim()) newErrors.AuthorEmail = "Author Email Address is required";
@@ -37,14 +37,14 @@ export default function PaperSubmission() {
         if (!formData.AuthorCategory.trim()) newErrors.AuthorCategory = "Author Category is required";
         if (!formData.AuthorAbstract.trim()) newErrors.AuthorAbstract = "Author Abstract is required";
         if (!formData.PaperFile) newErrors.PaperFile = "Paper File is required";
-    
+
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-    
+
         setErrors({});
-    
+
         const formDataToSend = new FormData();
         formDataToSend.append('title', formData.Papertitle);
         formDataToSend.append('fullName', formData.AuthorFullName);
@@ -53,18 +53,18 @@ export default function PaperSubmission() {
         formDataToSend.append('category', formData.AuthorCategory);
         formDataToSend.append('abstract', formData.AuthorAbstract);
         formDataToSend.append('file', formData.PaperFile);
-    
+
         try {
             const response = await fetch('http://localhost:5000/api/submit-paper', {
                 method: 'POST',
                 body: formDataToSend,
             });
-    
+
             // Check if the response is JSON
             const contentType = response.headers.get("content-type");
             if (contentType && contentType.includes("application/json")) {
                 const result = await response.json();
-    
+
                 if (response.ok) {
                     setMessage(result.message || "Paper submitted successfully!");
                     setMessageType('alert-success');
@@ -97,16 +97,17 @@ export default function PaperSubmission() {
 
 
     return (
-        <section className="bg-gray-100">
-             <div className="pt-10 px-06 md:px-20 w-full xl:w-[70%] mx-auto">
-                {/* Title */}
-             <h2 className="text-3xl font-bold text-green-700 mb-6">Paper Submission</h2>
-             </div>
+        <section className="bg-gray-100 pb-10">
+            <div className="pt-10 px-6 xl:px-20 w-full xl:w-[70%] mx-auto">
+                <h2 className="text-3xl font-bold text-green-700 mb-6 text-left">
+                    Paper Submission
+                </h2>
+            </div>
             {/* Main Content Section */}
-            <div className="w-full xl:w-[65%] px-4 mb-10 flex flex-col lg:flex-row gap-8 items-center justify-center mx-auto ">
+            <div className="w-full xl:w-[65%] px-4 flex flex-col lg:flex-row gap-8 items-center justify-center mx-auto ">
                 {/* Submission Form (Left Side) */}
                 <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-2xl p-8 border-t-4 border-b-4 border-green-500">
-                
+
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         {/* Paper Title */}
                         <div>
@@ -258,7 +259,7 @@ export default function PaperSubmission() {
                 </div>
 
                 {/* Submission Guidelines (Right Side) */}
-                <div className="w-full lg:w-1/2 bg-gray-100 shadow-lg rounded-2xl p-8">
+                <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-2xl p-8">
                     <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submission Guidelines</h2>
                     <ul className="space-y-3 text-gray-700">
                         <li className="flex items-center">

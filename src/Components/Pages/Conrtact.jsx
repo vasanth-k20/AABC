@@ -40,10 +40,10 @@ export default function Contact() {
                     <div className="border-t-4 border-b-4 border-green-500 p-6 shadow-md rounded-md bg-white">
                         <div className="mb-6">
                             <h3 className="text-xl font-semibold text-green-700 flex items-center">
-                                <Globe className="mr-2 text-green-500" /> About Arrow Thought
+                                <Globe className="mr-2 text-green-500" /> About International Forum
                             </h3>
                             <p className="text-gray-600 text-lg lg:text-[19px] text-justify">
-                            ​Arrow Thought is an IT company based in California, specializing in innovative software solutions and technology consulting services. They focus on delivering customized, cutting-edge products to meet diverse client needs.
+                            The Tokyo International Forum is a modern conference and event center in Chiyoda City, Tokyo. It features a stunning glass atrium and sleek steel framework. It is open for exhibitions, concerts, and business events.
                             </p>
                         </div>
 
