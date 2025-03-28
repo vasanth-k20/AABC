@@ -106,11 +106,11 @@ export default function PaperSubmission() {
             <div className="w-full xl:w-[65%] px-4 mb-10 flex flex-col lg:flex-row gap-8 items-center justify-center mx-auto ">
                 {/* Submission Form (Left Side) */}
                 <div className="w-full lg:w-2/3 bg-white shadow-lg rounded-2xl p-8 border-t-4 border-b-4 border-green-500">
-                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submit Your Paper</h2>
+                
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         {/* Paper Title */}
                         <div>
-                            <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="title" className="block text-lg font-medium text-gray-700">
                                 Paper Title
                             </label>
                             <input
@@ -128,7 +128,7 @@ export default function PaperSubmission() {
 
                         {/* Author(s) */}
                         <div>
-                            <label htmlFor="authors" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="authors" className="block text-lg font-medium text-gray-700">
                                 Author(s)
                             </label>
                             <input
@@ -146,7 +146,7 @@ export default function PaperSubmission() {
 
                         {/* Author's Email */}
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="email" className="block text-lg font-medium text-gray-700">
                                 Author's Email
                             </label>
                             <input
@@ -164,7 +164,7 @@ export default function PaperSubmission() {
 
                         {/* Author's Institution */}
                         <div>
-                            <label htmlFor="institution" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="institution" className="block text-lg font-medium text-gray-700">
                                 Author's Institution
                             </label>
                             <input
@@ -182,7 +182,7 @@ export default function PaperSubmission() {
 
                         {/* Author's Category */}
                         <div>
-                            <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="category" className="block text-lg font-medium text-gray-700">
                                 Author's Category
                             </label>
                             <select
@@ -204,7 +204,7 @@ export default function PaperSubmission() {
 
                         {/* Abstract */}
                         <div>
-                            <label htmlFor="abstract" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="abstract" className="block text-lg font-medium text-gray-700">
                                 Abstract
                             </label>
                             <textarea
@@ -222,7 +222,7 @@ export default function PaperSubmission() {
 
                         {/* File Upload */}
                         <div>
-                            <label htmlFor="file" className="block text-sm font-medium text-gray-700">
+                            <label htmlFor="file" className="block text-lg font-medium text-gray-700">
                                 Upload Paper (PDF only)
                             </label>
                             <input
