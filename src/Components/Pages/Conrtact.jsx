@@ -20,13 +20,32 @@ export default function Contact() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission (e.g., send data to an API or email service)
-        console.log("Form Data:", formData);
-        alert("Thank you for your message! We will get back to you soon.");
-        setFormData({ firstName: "", lastName: "", email: "", message: "" }); // Reset form
+    
+        try {
+            const response = await fetch("https://icaabc.com/contac.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const data = await response.json();
+    
+            if (data.success) {
+                alert("Thank you for your message! We will get back to you soon.");
+                setFormData({ firstName: "", lastName: "", email: "", message: "" });
+            } else {
+                alert("Error: " + data.message);
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+            alert("Something went wrong. Please try again later.");
+        }
     };
+    
 
     return (
         <section className="bg-gray-100" id="contact">
