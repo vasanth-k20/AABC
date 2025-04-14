@@ -13,34 +13,16 @@ const MetaTags = () => {
         "Welcome to ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems. A global platform for researchers, academicians, and industry professionals.",
       image: `${baseUrl}/img/favicon.png`,
     },
-    "/about": {
-      title: "ICAABC | About the Conference",
+    "/welcome-message": {
+      title: "ICAABC | Welcome Message",
       description:
-        "Learn about ICAABC – its mission, vision, and contributions to the fields of AI, Business Analytics, and Cloud Systems.",
+        "Read the welcome message from the organizing committee of ICAABC, inviting you to participate in this prestigious conference.",
       image: `${baseUrl}/img/favicon.png`,
     },
-    "/scope": {
-      title: "ICAABC | Scope of Conference",
-      description:
-        "Explore the wide range of topics covered under ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/organize": {
+    "/full-committee": {
       title: "ICAABC | Organizing Committee",
       description:
         "Meet the dedicated team organizing the ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/editorial": {
-      title: "ICAABC | Editorial Board",
-      description:
-        "View the esteemed editorial board behind ICAABC – curating high-quality academic content in AI, Business Analytics, and Cloud Systems.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/keydates": {
-      title: "ICAABC | Important Dates",
-      description:
-        "Stay informed on submission deadlines, notification dates, and event schedules for ICAABC.",
       image: `${baseUrl}/img/favicon.png`,
     },
     "/registration": {
@@ -49,7 +31,7 @@ const MetaTags = () => {
         "Get information on registration fees, categories, and process for attending ICAABC.",
       image: `${baseUrl}/img/favicon.png`,
     },
-    "/papersub": {
+    "/paper-submit": {
       title: "ICAABC | Paper Submission",
       description:
         "Submit your research paper to ICAABC – a platform for innovative work in AI, Business Analytics, and Cloud Systems.",

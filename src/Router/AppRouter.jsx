@@ -8,12 +8,14 @@ import PaperSubmission from '../Components/Pages/PaperSubmission'
 import ScrollToTop from '../Scrolltotop'
 import Contact from '../Components/Pages/Conrtact'
 import RegistrationDetails from '../Components/Pages/RegistrationDetail'
+import MetaTags from '../Core/MetaTags'
 
 export default function AppRouter() {
   return (
     <div>
       <BrowserRouter>
         <ScrollToTop />
+        <MetaTags />
         <Routes>
           <Route element={<Main />}>
             <Route path="/" element={<Home />} />
