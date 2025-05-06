@@ -19,10 +19,10 @@ const WelcomeMessage = () => {
             Dear <span className="font-semibold">Colleagues and Friends</span>,
           </p>
           <p className="text-gray-700 leading-7 mb-4 text-justify">
-            We are pleased to invite you to the <span className="font-semibold">2025 International Conference on Advances in AI, Business Analytics, and Cloud Systems (AABC 2025)</span>. This prestigious event will take place from <span className="font-semibold">November 15th to 17th, 2025</span>, at the <span className="font-semibold">Grand Marina Bay Hotel</span> in the dynamic city of <span className="font-semibold">Singapore</span>.
+            We are pleased to invite you to the <span className="font-semibold">2025 International Conference on Advances in AI, Business Analytics, and Cloud Systems (AABC 2025)</span>. This prestigious event will take place from <span className="font-semibold">October 24th to 26th, 2025</span>, at the <span className="font-semibold">Tokyo International Forum</span> in the dynamic city of <span className="font-semibold">Chiyoda City</span>.
           </p>
           <p className="text-gray-700 leading-7 mb-4">
-            <span className="font-semibold">Singapore</span>, a global hub for technology and innovation, is home to a thriving ecosystem of <span className="font-semibold">AI research, business intelligence, and cloud computing</span>. With world-class infrastructure and a vibrant tech community, it serves as the perfect venue for <span className="font-semibold">AABC 2025</span>.
+            <span className="font-semibold">Chiyoda</span>, a global hub for technology and innovation, is home to a thriving ecosystem of <span className="font-semibold">AI research, business intelligence, and cloud computing</span>. With world-class infrastructure and a vibrant tech community, it serves as the perfect venue for <span className="font-semibold">AABC 2025</span>.
           </p>
           <p className="text-gray-700 leading-7 mb-4">
             The theme of <span className="font-semibold">AABC 2025</span>, <span className="font-semibold">"Harnessing AI, Business Analytics, and Cloud Systems for Digital Transformation"</span>, will explore cutting-edge advancements in <span className="font-semibold">artificial intelligence, data-driven decision-making, and cloud technologies</span> that are reshaping industries worldwide.
@@ -37,7 +37,7 @@ const WelcomeMessage = () => {
             Your participation will be invaluable in making <span className="font-semibold">AABC 2025</span> a landmark event for the <span className="font-semibold">AI, business analytics, and cloud computing communities</span>. We extend our heartfelt gratitude to the <span className="font-semibold">organizing committee and sponsors</span> for their commitment to making this conference a success.
           </p>
           <p className="text-gray-700 leading-7 mb-4">
-            We look forward to welcoming you to <span className="font-semibold">Singapore</span>, where we will experience not only a world-class conference but also the vibrant culture and innovation-driven spirit of the city.
+            We look forward to welcoming you to <span className="font-semibold">Chiyoda</span>, where we will experience not only a world-class conference but also the vibrant culture and innovation-driven spirit of the city.
           </p>
 
           {/* Signature */}
