@@ -77,7 +77,7 @@ export default function Contact() {
                             <h3 className="text-lg font-semibold text-green-700 flex items-center">
                                 <Phone className="mr-2 text-green-500" /> Call
                             </h3>
-                            <p className="text-gray-600 text-lg lg:text-[19px]">+6 43286121234</p>
+                            <p className="text-gray-600 text-lg lg:text-[19px]">+6 0000012121</p>
                         </div>
 
                         {/* Google Map */}
