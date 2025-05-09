@@ -54,7 +54,7 @@ const OrganizingCommittee = () => {
                   {member.name}
                 </h3>
                 <p className="mb-1">{member.role}</p>
-                <div className="border-t-2 border-green-700 w-13 mb-4"></div>
+                <div className="border-t-0 md:border-t-2 border-green-700 w-13 mb-4"></div>
                 <p className="text-green-700 mb-2">{member.university}</p>
                 <p className="text-gray-700">{member.country}</p>
               </div>

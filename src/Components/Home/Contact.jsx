@@ -40,14 +40,14 @@ export default function Contact() {
             </div>
 
             {/* Google Map */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <iframe
                 className="w-full h-48 rounded-md"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.488715259873!2d139.7635573152587!3d35.68123618019425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2sTokyo%20International%20Forum!5e0!3m2!1sen!2sjp!4v1234567890123!5m2!1sen!2sjp"
                 loading="lazy"
                 title="Tokyo International Forum Map"
               ></iframe>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Section */}
