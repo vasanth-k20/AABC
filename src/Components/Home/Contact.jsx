@@ -36,7 +36,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Phone className="mr-2 text-green-500" /> Call
               </h3>
-              <p className="text-gray-700 text-lg">+6 43286121234</p>
+              <p className="text-gray-700 text-lg">+6 0000012121</p>
             </div>
 
             {/* Google Map */}
@@ -77,7 +77,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Mail className="mr-2 text-green-500" /> Inquiry Email
               </h3>
-              <p className="text-gray-700 text-lg lg:text-[19px]">icaabc2025@outlook.com</p>
+              <p className="text-gray-700 text-lg lg:text-[19px]">x1y2z3@outlook.com</p>
             </div>
           </div>
         </div>

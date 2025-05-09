@@ -21,7 +21,11 @@ const Footer = () => {
             <li><a href="/contact" className="text-white hover:text-gray-300">Support</a></li>
           </ul>
           <div className="flex space-x-4 sm:justify-center">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-green-900 flex justify-center items-center hover:bg-green-700">
+           <ul>
+            <li className="text-lg text-white hover:text-gray-300"><strong>Contact :</strong> x1y2z3@outlook.com</li>
+           </ul>
+           {/* <div>
+             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-green-900 flex justify-center items-center hover:bg-green-700">
               <BsTwitterX className="w-5 h-5 text-white" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-green-900 flex justify-center items-center hover:bg-green-700">
@@ -33,6 +37,7 @@ const Footer = () => {
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-green-900 flex justify-center items-center hover:bg-green-700">
               <FaYoutube className="w-5 h-5 text-white" />
             </a>
+           </div> */}
           </div>
         </div>
         <div className="py-7 border-t border-green-700">

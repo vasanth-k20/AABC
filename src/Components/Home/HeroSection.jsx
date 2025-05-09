@@ -25,7 +25,7 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center">
             <img
-              src="/img/tok1.jpg"
+              src="/img/tok1.webp"
               alt="Venue"
               className="rounded-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover xl:max-w-xl 2xl:max-w-2xl"
             />
@@ -35,9 +35,9 @@ export default function HeroSection() {
         {/* Image Gallery */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-10 w-full px-4">
           {[
-            "/img/tok2.jpg",
-            "/img/tok3.jpg",
-            "/img/tok4.jpg",
+            "/img/tok2.webp",
+            "/img/tok3.webp",
+            "/img/tok4.webp",
           ].map((src, index) => (
             <img
               key={index}

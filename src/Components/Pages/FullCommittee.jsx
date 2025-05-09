@@ -7,21 +7,21 @@ const committeeMembers = [
     role: "General Co-Chair",
     university: "Tokyo Institute of Technology (Tokyo Tech)",
     country: "Japan",
-    image: "img/comm1.jpg", 
+    image: "img/user.png", 
   },
   {
     name: "Yoshinori Ohsumi",
     role: "General Co-Chair",
     university: "The University of Tokyo (UTokyo)",
     country: "Japan",
-    image: "img/comm2.jpg",
+    image: "img/user.png",
   },
   {
     name: "Hiroshi Ishikawa ",
     role: "General Co-Chair",
     university: "Waseda University",
     country: "Japan",
-    image: "img/comm3.jpg", 
+    image: "img/user.png", 
   },
 ];
 
