@@ -78,14 +78,29 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter("About")}
                 onMouseLeave={handleMouseLeave}
               >
-                <li className="hover:bg-gray-200">
+                {/* <li className="hover:bg-gray-200">
                   <Link to="/welcome-message" className="block px-4 py-2 w-full">
                     Welcome Message
+                  </Link>
+                </li> */}
+                <li className="hover:bg-gray-200">
+                  <Link to="/about-conference" className="block px-4 py-2 w-full">
+                    About the Conference
+                  </Link>
+                </li>
+                <li className="hover:bg-gray-200">
+                  <Link to="/scope-conference" className="block px-4 py-2 w-full">
+                    Scope of Conference
                   </Link>
                 </li>
                 <li className="hover:bg-gray-200">
                   <Link to="/full-committee" className="block px-4 py-2 w-full">
                     Organizing Committee
+                  </Link>
+                </li>
+                <li className="hover:bg-gray-200">
+                  <Link to="/editorial-board" className="block px-4 py-2 w-full">
+                    Editorial Board
                   </Link>
                 </li>
               </ul>
@@ -110,6 +125,11 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter("Authors")}
                 onMouseLeave={handleMouseLeave}
               >
+                <li className="hover:bg-gray-200">
+                  <Link to="/conference-tracks" className="block px-4 py-2 w-full">
+                   Conference Tracks
+                  </Link>
+                </li>
                 <li className="hover:bg-gray-200">
                   <Link to="/registration" className="block px-4 py-2 w-full">
                     Registration Details
@@ -171,27 +191,39 @@ export default function Header() {
               {dropdownOpen === "About" && (
                 <ul className="absolute left-[-50%] mt-2 bg-white text-black shadow-md rounded-md py-2 w-64 z-50">
                   <li className="hover:bg-gray-200">
-                    <Link
-                      to="/welcome-message"
-                      className="block px-4 py-2 w-full"
-                      onClick={() => {
+                  <Link to="/about-conference" className="block px-4 py-2 w-full" onClick={() => {
                         setDropdownOpen(null);
                         setMenuOpen(false);
-                      }}
-                    >
-                      Welcome Message
-                    </Link>
-                  </li>
+                      }}>
+                    About the Conference
+                  </Link>
+                </li>
+                <li className="hover:bg-gray-200">
+                  <Link to="/scope-conference" className="block px-4 py-2 w-full" onClick={() => {
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
+                      }}>
+                    Scope of Conference
+                  </Link>
+                </li>
+                <li className="hover:bg-gray-200">
+                  <Link to="/full-committee" className="block px-4 py-2 w-full" onClick={() => {
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
+                      }}>
+                    Organizing Committee
+                  </Link>
+                </li>
                   <li className="hover:bg-gray-200">
                     <Link
-                      to="/full-committee"
+                      to="/editorial-board"
                       className="block px-4 py-2 w-full"
                       onClick={() => {
                         setDropdownOpen(null);
                         setMenuOpen(false);
                       }}
                     >
-                      Organizing Committee
+                      Editorial Board
                     </Link>
                   </li>
                 </ul>
@@ -208,6 +240,14 @@ export default function Header() {
               </button>
               {dropdownOpen === "Authors" && (
                 <ul className="absolute left-[-50%] mt-2 bg-white text-black shadow-md rounded-md py-2 w-64 z-50">
+                  <li className="hover:bg-gray-200">
+                  <Link to="/conference-tracks" className="block px-4 py-2 w-full" onClick={() => {
+                        setDropdownOpen(null);
+                        setMenuOpen(false);
+                      }}>
+                   Conference Tracks
+                  </Link>
+                </li>
                   <li className="hover:bg-gray-200">
                     <Link
                       to="/registration"
