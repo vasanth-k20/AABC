@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function EditorialBoard() {
     return (
-        <div className='bg-gray-100 max-h-screen flex flex-col justify-center items-center'>
+        <div className='bg-gray-100 flex flex-col justify-center items-center'>
             {/* Header Section */}
         <div className='xl:w-[65%] items-center mx-auto px-4'>
 

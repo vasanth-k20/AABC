@@ -25,7 +25,7 @@ export default function HeroSection() {
           </div>
           <div className="flex justify-center">
             <img
-              src="/img/tok1.webp"
+              src="/img/hero.webp"
               alt="Venue"
               className="rounded-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover xl:max-w-xl 2xl:max-w-2xl"
             />

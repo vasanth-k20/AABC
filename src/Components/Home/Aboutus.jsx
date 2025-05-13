@@ -29,7 +29,7 @@ const About = () => {
                     {/* Image or Additional Content */}
                     <div className="flex justify-center items-center">
                         <img
-                            src="/img/tok5.webp" // Replace with your image path
+                            src="/img/about.webp" // Replace with your image path
                             alt="About ICSET"
                             className="rounded-lg shadow-lg w-full h-[400px] max-w-md"
                         />

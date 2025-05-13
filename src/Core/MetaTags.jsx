@@ -7,43 +7,67 @@ const MetaTags = () => {
   const baseUrl = "https://icaabc.com/";
 
   const metaInfo = {
-    "/": {
-      title: "ICAABC | Home",
-      description:
-        "Welcome to ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems. A global platform for researchers, academicians, and industry professionals.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/welcome-message": {
-      title: "ICAABC | Welcome Message",
-      description:
-        "Read the welcome message from the organizing committee of ICAABC, inviting you to participate in this prestigious conference.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/full-committee": {
-      title: "ICAABC | Organizing Committee",
-      description:
-        "Meet the dedicated team organizing the ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/registration": {
-      title: "ICAABC | Registration Details",
-      description:
-        "Get information on registration fees, categories, and process for attending ICAABC.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/paper-submit": {
-      title: "ICAABC | Paper Submission",
-      description:
-        "Submit your research paper to ICAABC – a platform for innovative work in AI, Business Analytics, and Cloud Systems.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-    "/contact": {
-      title: "ICAABC | Contact Us",
-      description:
-        "Have questions? Reach out to the ICAABC organizing committee for support and queries.",
-      image: `${baseUrl}/img/favicon.png`,
-    },
-  };
+  "/": {
+    title: "ICAABC | Home",
+    description:
+      "Welcome to ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems. A global platform for researchers, academicians, and industry professionals.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/welcome-message": {
+    title: "ICAABC | Welcome Message",
+    description:
+      "Read the welcome message from the organizing committee of ICAABC, inviting you to participate in this prestigious conference.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/full-committee": {
+    title: "ICAABC | Organizing Committee",
+    description:
+      "Meet the dedicated team organizing the ICAABC – International Conference on Advances in AI, Business Analytics, and Cloud Systems.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/registration": {
+    title: "ICAABC | Registration Details",
+    description:
+      "Get information on registration fees, categories, and process for attending ICAABC.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/paper-submit": {
+    title: "ICAABC | Paper Submission",
+    description:
+      "Submit your research paper to ICAABC – a platform for innovative work in AI, Business Analytics, and Cloud Systems.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/contact": {
+    title: "ICAABC | Contact Us",
+    description:
+      "Have questions? Reach out to the ICAABC organizing committee for support and queries.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/about-conference": {
+    title: "ICAABC | About the Conference",
+    description:
+      "Learn about ICAABC's vision, objectives, and significance in advancing AI, Business Analytics, and Cloud Systems globally.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/scope": {
+    title: "ICAABC | Scope of the Conference",
+    description:
+      "Explore the wide-ranging topics covered at ICAABC, including AI, business intelligence, data science, and cloud infrastructure.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/editorial-board": {
+    title: "ICAABC | Editorial Board",
+    description:
+      "Meet the editorial board members who ensure the quality and integrity of papers presented at ICAABC.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+  "/conference-tracks": {
+    title: "ICAABC | Conference Tracks",
+    description:
+      "Discover the diverse conference tracks at ICAABC covering AI applications, data analytics, cloud systems, and more.",
+    image: `${baseUrl}/img/favicon.png`,
+  },
+};
 
   const currentPath = Object.keys(metaInfo).includes(location.pathname)
     ? location.pathname
