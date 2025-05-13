@@ -5,7 +5,7 @@ export default function HeroSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-[#528F62] px-5 h-full">
+    <section className="bg-[#528F62] px-5 py-10 h-full">
       <div className="w-full xl:w-[85%] 2xl:w-[65%] mx-auto flex flex-col items-center py-10">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -33,7 +33,7 @@ export default function HeroSection() {
         </div>
 
         {/* Image Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-10 w-full px-4">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pt-10 w-full px-4">
           {[
             "/img/tok2.webp",
             "/img/tok3.webp",
@@ -46,7 +46,7 @@ export default function HeroSection() {
               className="w-full h-52 object-cover rounded-lg"
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
