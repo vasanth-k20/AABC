@@ -49,7 +49,7 @@ const MetaTags = () => {
       "Learn about ICAABC's vision, objectives, and significance in advancing AI, Business Analytics, and Cloud Systems globally.",
     image: `${baseUrl}/img/favicon.png`,
   },
-  "/scope": {
+  "/scope-conference": {
     title: "ICAABC | Scope of the Conference",
     description:
       "Explore the wide-ranging topics covered at ICAABC, including AI, business intelligence, data science, and cloud infrastructure.",
