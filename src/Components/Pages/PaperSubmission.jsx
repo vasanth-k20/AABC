@@ -106,7 +106,7 @@ export default function PaperSubmission() {
     {/* Main Content Section */}
     <div className="w-full xl:w-[65%] px-4 flex flex-col lg:flex-row gap-8 items-center justify-center mx-auto">
         {/* Submission Guidelines (Top on mobile) */}
-        <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-2xl p-8 order-1 lg:order-2">
+        <div className="w-full lg:w-1/2 bg-white shadow-lg rounded-2xl p-8 order-1 lg:order-2 border-t-4 border-b-4 border-green-500">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Submission Guidelines</h2>
             <ul className="space-y-3 text-gray-700">
                 <li className="flex items-center">

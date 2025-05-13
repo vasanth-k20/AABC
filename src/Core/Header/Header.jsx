@@ -287,7 +287,7 @@ export default function Header() {
 
           <Link
             to="/paper-submit"
-            className="mt-6 border border-white px-6 py-2 rounded-full hover:bg-green-300 transition"
+            className="mt-6 border border-white px-6 py-2 rounded-full hover:bg-green-600 transition"
             onClick={() => setMenuOpen(false)}
           >
             Registration

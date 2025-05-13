@@ -3,25 +3,25 @@ import { useNavigate } from "react-router-dom";
 
 const committeeMembers = [
   {
-    name: "Takaaki Kajita",
+    name: "Name",
     role: "General Co-Chair",
-    university: "Tokyo Institute of Technology (Tokyo Tech)",
-    country: "Japan",
+    university: "Collage",
+    country: "Location",
+    image: "img/user.png",  
+  },
+  {
+    name: "Name",
+    role: "General Co-Chair",
+    university: "Collage",
+    country: "Location",
     image: "img/user.png", 
   },
   {
-    name: "Yoshinori Ohsumi",
+    name: "Name",
     role: "General Co-Chair",
-    university: "The University of Tokyo (UTokyo)",
-    country: "Japan",
-    image: "img/user.png",
-  },
-  {
-    name: "Hiroshi Ishikawa ",
-    role: "General Co-Chair",
-    university: "Waseda University",
-    country: "Japan",
-    image: "img/user.png", 
+    university: "Collage",
+    country: "Location",
+    image: "img/user.png",  
   },
 ];
 
@@ -116,10 +116,10 @@ const FullCommittee = () => {
         <div className="bg-white rounded-lg shadow-lg mt-10 p-6">
           {committeeList.map((section, index) => (
             <div key={index} className="mb-6 text-center">
-              <h3 className="text-xl font-semibold text-green-700 mb-2">{section.title}</h3>
+              <h3 className="text-xl font-semibold text-green-700 mb-2 mt-5">{section.title}</h3>
               <ul className="text-gray-700 text-lg">
                 {section.members.map((member, idx) => (
-                  <li key={idx} className="mb-1">{member}</li>
+                  <li key={idx} className="mb-5">{member}</li>
                 ))}
               </ul>
             </div>

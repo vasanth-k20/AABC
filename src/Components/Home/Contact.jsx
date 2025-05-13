@@ -32,13 +32,6 @@ export default function Contact() {
               <p className="text-gray-700 text-lg lg:text-[19px]">Tokyo International Forum, Chiyoda City, Tokyo 266061</p>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-green-700 flex items-center">
-                <Phone className="mr-2 text-green-500" /> Call
-              </h3>
-              <p className="text-gray-700 text-lg">+6 0000012121</p>
-            </div>
-
             {/* Google Map */}
             {/* <div className="mt-6">
               <iframe
@@ -53,31 +46,27 @@ export default function Contact() {
           {/* Right Section */}
           <div className="border-t-4 border-b-4 border-green-500 p-6 shadow-md rounded-md bg-white">
             <div className="mb-4">
-              <h3 className="text-xl font-semibold text-green-700 flex items-center">
-                <Globe className="mr-2 text-green-500" /> Visa Requirement
-              </h3>
-              <p className="text-gray-700 text-lg lg:text-[19px] text-justify mb-6">
-                Multiple policies help foreigners enter Japan. If your country is in the
-                <a href="#" className="text-green-500 font-semibold"> list of agreements</a> for visa exemption,
-                you don't need a visa. Otherwise, check <a href="#" className="text-green-500 font-semibold">this link</a>.
-              </p>
-            </div>
-
-            <div className="mb-6">
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Globe className="mr-2 text-green-500" /> Transportation
               </h3>
               <p className="text-gray-700 text-lg lg:text-[19px]">
               Chiyoda has an efficient public transport system. Learn more via
-                <a href="#" className="text-green-500 font-semibold"> this link</a>.
+                <a href="#"> this link</a>.
               </p>
             </div>
 
-            <div>
+            <div className="mb-6">
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <Mail className="mr-2 text-green-500" /> Inquiry Email
               </h3>
               <p className="text-gray-700 text-lg lg:text-[19px]">x1y2z3@outlook.com</p>
+            </div>
+              <h3 className="text-lg font-semibold text-green-700 flex items-center">
+                <Phone className="mr-2 text-green-500" /> Call
+              </h3>
+              <p className="text-gray-700 text-lg">+6 0000012121</p>
+            <div>
+              
             </div>
           </div>
         </div>

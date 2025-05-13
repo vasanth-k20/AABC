@@ -54,7 +54,7 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-green-700 mb-6">Contact</h2>
 
                 {/* Card Section */}
-                <div className="grid md:grid-cols-2 gap-8 mt-8">
+                <div className="grid lg:grid-cols-2 gap-8 mt-8">
                     {/* Left Section */}
                     <div className="border-t-4 border-b-4 border-green-500 p-6 shadow-md rounded-md bg-white">
                         <div className="mb-6">

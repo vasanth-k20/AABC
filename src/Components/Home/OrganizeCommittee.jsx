@@ -3,25 +3,25 @@ import { useNavigate } from "react-router-dom";
 
 const committeeMembers = [
   {
-    name: "Takaaki Kajita",
+    name: "Name",
     role: "General Co-Chair",
-    university: "Tokyo Institute of Technology (Tokyo Tech)",
-    country: "Japan",
+    university: "Collage",
+    country: "Location",
     image: "img/user.png", 
   },
   {
-    name: "Yoshinori Ohsumi",
+    name: "Name",
     role: "General Co-Chair",
-    university: "The University of Tokyo (UTokyo)",
-    country: "Japan",
+    university: "Collage",
+    country: "Location",
     image: "img/user.png", 
   },
   {
-    name: "Hiroshi Ishikawa ",
+    name: "Name",
     role: "General Co-Chair",
-    university: "Waseda University",
-    country: "Japan",
-    image: "img/user.png", 
+    university: "Collage",
+    country: "Location",
+    image: "img/user.png",
   },
 ];
 
