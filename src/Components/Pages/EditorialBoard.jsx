@@ -18,14 +18,14 @@ export default function EditorialBoard() {
                         <div className="border border-green-700 rounded-md p-4 w-full md:w-1/2 text-center bg-white shadow-lg">
                             <h3 className="font-bold text-lg mb-1">Name 1</h3>
                             <p className="mb-4">ASP / Mechanical Engg.</p>
-                            <p>Prince Mohammed Bin Fahd University,</p>
-                            <p className="italic text-gray-600">Al Khobar, Saudi Arabia.</p>
+                            <p>Collage,</p>
+                            <p className="italic text-gray-600">Location.</p>
                         </div>
                         <div className="border border-green-700 rounded-md p-4 w-full md:w-1/2 text-center bg-white shadow-lg">
                             <h3 className="font-bold text-lg mb-1">Name 2</h3>
                             <p className="mb-4">ASP / Production Engg.</p>
-                            <p>National Institute of Technology,</p>
-                            <p className="italic text-gray-600">Trichy.</p>
+                            <p>Collage,</p>
+                            <p className="italic text-gray-600">Location.</p>
                         </div>
                     </div>
 
@@ -34,14 +34,14 @@ export default function EditorialBoard() {
                         <div className="border border-green-700 rounded-md p-4 w-full md:w-1/2 text-center bg-white shadow-lg">
                             <h3 className="font-bold text-lg mb-1">Name 3</h3>
                             <p className="mb-4">AP & Head / Mech</p>
-                            <p>National Institute of Technology,</p>
-                            <p className="italic text-gray-600">Karaikal, UT of Puducherry.</p>
+                            <p>Collage,</p>
+                            <p className="italic text-gray-600">Location.</p>
                         </div>
                         <div className="border border-green-700 rounded-md p-4 w-full md:w-1/2 text-center bg-white shadow-lg">
                             <h3 className="font-bold text-lg mb-1">Name 4</h3>
                             <p className="mb-4">Manager</p>
-                            <p>Advanced Technology Products,</p>
-                            <p className="italic text-gray-600">BHEL, Trichy.</p>
+                            <p>Collage,</p>
+                            <p className="italic text-gray-600">Location.</p>
                         </div>
                     </div>
 
@@ -49,8 +49,8 @@ export default function EditorialBoard() {
                     <div className="border border-green-700 rounded-md p-4 w-full md:w-1/2 text-center bg-white shadow-lg">
                         <h3 className="font-bold text-lg mb-1">Name 5</h3>
                         <p className="mb-4">Professor</p>
-                        <p>Dept. of Environmental Science & Engg.,</p>
-                        <p className="italic text-gray-600">Mersin University, Turkey.</p>
+                        <p>Collage,</p>
+                            <p className="italic text-gray-600">Location.</p>
                     </div>
 
                 </div>

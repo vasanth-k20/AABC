@@ -29,7 +29,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-green-700 flex items-center">
                 <MapPin className="mr-2 text-green-500" /> Location
               </h3>
-              <p className="text-gray-700 text-lg lg:text-[19px]">Tokyo International Forum, Chiyoda City, Tokyo 266061</p>
+              <p className="text-gray-700 text-lg lg:text-[19px]">Chiyoda City, Tokyo, Japan</p>
             </div>
 
             {/* Google Map */}

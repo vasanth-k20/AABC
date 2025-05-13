@@ -29,57 +29,57 @@ const committeeList = [
   {
     title: "General Co-Chairs",
     members: [
-      "Rajesh Kumar, University of Oxford, UK",
-      "Priya Sharma, Indian Institute of Science, India",
-      "Mohammed Al-Farsi, King’s College London, UK",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "Technical Program Co-Chairs",
     members: [
-      "James Anderson, University of Cambridge, UK",
-      "Ananya Verma, Indian Institute of Technology Delhi, India",
-      "Ethan Carter, Harvard University, USA",
-      "Lucas Bennett, University of Toronto, Canada",
-      "Arjun Nair, Digital University Kerala, India",
-      "Rohan Mehta, City University of London, UK",
-      "Daniel Kim, Cornell Tech, USA",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "Financial Co-Chairs",
     members: [
-      "Sarah Lewis, University of Edinburgh, UK",
-      "Aditya Patel, National University of Singapore, Singapore",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "Publicity Co-Chairs",
     members: [
-      "Emily White, Imperial College London, UK",
-      "Thomas van Dijk, Delft University of Technology, Netherlands",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "Local Arrangement Co-Chairs",
     members: [
-      "David Brown, University of Manchester, UK",
-      "Sophia Li, University of Birmingham, UK",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "DEI Co-Chairs",
     members: [
-      "Olivia Taylor, University of Glasgow, UK",
-      "Aarav Singh, University of Delhi, India",
-      "Hannah Chen, University College London, UK",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
   {
     title: "Sponsorship Co-Chairs",
     members: [
-      "Nathan Scott, University of Bristol, UK",
-      "Wei Zhang, National University of Singapore, Singapore",
+      "Name, Collage, Location",
+      "Name, Collage, Location",
     ],
   },
 ];

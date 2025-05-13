@@ -70,7 +70,7 @@ export default function Contact() {
                             <h3 className="text-lg font-semibold text-green-700 flex items-center">
                                 <MapPin className="mr-2 text-green-500" /> Location
                             </h3>
-                            <p className="text-gray-600 text-lg lg:text-[19px] text-justify">Tokyo International Forum, Chiyoda City, Tokyo 266061</p>
+                            <p className="text-gray-600 text-lg lg:text-[19px] text-justify">Chiyoda City, Tokyo, Japan</p>
                         </div>
 
                         <div>
@@ -157,7 +157,7 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
+                                className="w-full bg-green-700 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
                             >
                                 Send Message
                             </button>
